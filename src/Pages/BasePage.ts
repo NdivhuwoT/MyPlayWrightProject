@@ -20,4 +20,9 @@ export class BasePage {
         await locator.clear();
         await locator.fill(text);
     }
+
+    async getText(locator: Locator): Promise<string> {
+        return await locator.textContent() || '';
+    }
+
 }
