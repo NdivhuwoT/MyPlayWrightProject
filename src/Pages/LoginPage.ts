@@ -7,22 +7,22 @@ export class LoginPage extends BasePage {
     }
 
     async clickLoginButton() {
-        const loginButton = this.page.locator('button:has-text("Login")');
+        const loginButton = this.page.locator('xpath=//span[normalize-space()="Login"]');
         await this.clickElement(loginButton);
     }
 
     async enterUsername(username: string) {
-        const usernameField = this.page.locator('input[name="username"]');
+        const usernameField = this.page.locator('input[id="login-email"]');
         await this.enterText(usernameField, username);
     }
 
     async enterPassword(password: string) {
-        const passwordField = this.page.locator('input[name="password"]');
+        const passwordField = this.page.locator('input[id="login-password"]');
         await this.enterText(passwordField, password);
     }
 
     async clickSubmitButton() {
-        const submitButton = this.page.locator('button:has-text("Submit")');
+        const submitButton = this.page.locator('button[name="loginSubmit"]');
         await this.clickElement(submitButton);
     }
 }
